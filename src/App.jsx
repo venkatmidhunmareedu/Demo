@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Screen1 from "./pages/Screen1";
 import Sample from "./pages/Sample";
+import Home from "./pages/Home";
 
 function App() {
   const action = useNavigationType();
@@ -48,6 +49,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Screen1 />} />
       <Route path="/sample" element={<Sample />} />
+      <Route path="/home" element={<Home />}/>
     </Routes>
   );
 }

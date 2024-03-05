@@ -2,7 +2,7 @@ import React from 'react'
 
 const SideBar = () => {
   return (
-    <div className="flex flex-col gap-7 justify-center items-center  bg-darkslateblue-200 w-[65px] h-[100vh]" >
+    <div className="flex flex-col gap-7 justify-center items-center  bg-darkslateblue-200 w-[65px] h-[90vh]" >
       <img
         className=" cursor-pointer w-[41.44px] h-[41.44px]"
         alt=""

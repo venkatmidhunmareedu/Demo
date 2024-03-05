@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="flex justify-center items-center bg-brown w-[100vw] h-[70px] font-poppins" >
+        <div className="flex justify-center items-center bg-brown w-[100vw] h-[73px] font-poppins" >
             <div className="text-sm text-white">
                 © 2023, ModuleMD®. All Rights Reserved.
             </div>
