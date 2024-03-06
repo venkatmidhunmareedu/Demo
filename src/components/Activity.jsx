@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Events from "./Events";
 
 const Appointments = () => {
     const [eventButton,setEventButton] = useState(true);
@@ -25,55 +26,31 @@ const Appointments = () => {
 
   return (
     <div>
-      <div className="flex font-poppins pl-1">
+      <div className="flex justify-center items-center font-poppins pl-1">
         <div>
-          <button className="text-large uppercase bg-white font-bold cursor-pointer font-poppins" onClick={handleEvent}>
+          <div className="text-sm uppercase  font-bold cursor-pointer font-poppins" onClick={handleEvent}>
             EVENTS
-          </button>
+          </div>
           <div className={`rounded-l-3xs my-2 ${eventButton ? "bg-blue-400" : " bg-whitesmoke-300"} h-1.5`}></div>
         </div>
         <div>
-          <button className="text-large bg-white mx-6 uppercase font-bold cursor-pointer font-poppins " onClick={handleSignal}>
+          <div className="text-sm mx-9 uppercase font-bold cursor-pointer font-poppins " onClick={handleSignal}>
             SIGNALS
-          </button>
+          </div >
           <div className={`my-2 ${signalButton ? "bg-blue-400" : " bg-whitesmoke-300"} h-1.5`}></div>
         </div>
         <div>
-          <button className="text-large bg-white uppercase font-bold cursor-pointer font-poppins" onClick={handleAttachments}>
+          <div className="text-sm uppercase font-bold cursor-pointer font-poppins" onClick={handleAttachments}>
             ATTACHMENTS
-          </button>
+          </div >
           <div className={`rounded-r-3xs ${attachmentsButton ? "bg-blue-400" : " bg-whitesmoke-300"} my-2 h-1.5`}></div>
         </div>
       </div>
-
-      <div className=" bg-lavenderblush p-2 rounded-mini font-poppins font-medium">
-        <div className="flex justify-start">
-        <div className="p-1">
-          <img
-            className="w-3.5 h-4"
-            alt=""
-            src="/icon-awesomecalendaralt.svg"
-          />
-        </div>
-        <div className="flex ml-3">
-          <div className="text-md mt-[2px]">Appointments</div>
-          <div className="ml-28">
-            <img
-            className="cursor-pointer"
-              alt=""
-              src="/icon-materialnavigatenext.svg"
-            />
-          </div>
-        </div>
-
-        </div>
+    
         <div>
-          <p className="mx-6 mt-1 text-xs">
-            What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry
-          </p>
+            <Events />
+            <Events />
         </div>
-      </div>
     </div>
   );
 };
