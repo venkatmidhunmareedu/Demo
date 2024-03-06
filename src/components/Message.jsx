@@ -1,4 +1,6 @@
 import React from "react";
+import 'react-chat-elements/dist/main.css';
+import { ChatItem } from 'react-chat-elements'
 
 function Message() {
   return (
@@ -27,6 +29,7 @@ function Message() {
         3
       </div>
     </div>
+    
   );
 }
 

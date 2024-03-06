@@ -1,9 +1,15 @@
 import React from 'react'
 import { FaRegSmile } from "react-icons/fa";
+import { MessageList } from 'react-chat-elements'
+import { SideBar } from 'react-chat-elements'
+const messageListReferance = React.createRef();
+import { Input, Button } from 'react-chat-elements'
+const inputReferance = React.createRef()
+
 
 const ChatWindow = () => {
     return (
-        <div className='text-sm font-sm rounded-xl bg-whitesmoke-100 box-border max-w-screen-md h-full border-[1px] border-solid border-gainsboro-200 font-poppins'>
+        <div className='text-sm font-sm rounded-xl bg-whitesmoke-100 box-border max-w-screen-md h-full border-[1px] border-solid border-gainsboro-200 font-poppins scale-90'>
             { /* chat window header */}
             <div className="rounded-t-xl rounded-b-none bg-whitesmoke-200 box-border w-full h-[82px] border-[1px] border-solid border-gainsboro-200" >
                 <div className='flex items-center justify-start space-x-4 px-4 pt-2'>
@@ -16,13 +22,10 @@ const ChatWindow = () => {
                 </div>
             </div>
             {/* chat window body */}
-            <div className='flex flex-col px-4'>
-                { /* chat date */}
+            {/* <div className='flex flex-col px-4'>
                 <div className="flex justify-center text-center text-lg font-medium text-darkgray my-3">
                     December 21, 2023
                 </div>
-                { /* chat message */}
-                { /* sender side */}
                 <div className='flex  justify-end items-center space-x-2'>
                     <div>
                         <div className="rounded-t-3xs rounded-br-none rounded-bl-3xs bg-limegreen max-w-fit max-h-fit px-3 py-1 " >
@@ -38,7 +41,6 @@ const ChatWindow = () => {
                         src="/gt@2x.png"
                     />
                 </div>
-                { /* receiver side */}
                 <div className='flex  justify-start items-center space-x-2'>
                     <img
                         className="rounded-[50%] w-11 h-11 object-cover"
@@ -56,6 +58,61 @@ const ChatWindow = () => {
                         </div>
                     </div>
                 </div>
+            </div> */}
+            <br />
+            <div className='md:mx-4 h-[45vh] overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'> 
+                <div className="flex justify-center text-center text-lg font-medium text-darkgray my-3">
+                    December 21, 2023
+                </div>
+                <MessageList
+                    referance={messageListReferance}
+                    className='message-list'
+                    lockable={true}
+                    toBottomHeight={'100%'}
+                    dataSource={[
+                        {
+                            position: 'right',
+                            type: 'text',
+                            titleColor: 'green',
+                            className: '',
+                            title: 'Franky Schmidt',
+                            text: 'Hello Doctor!',
+                            date: new Date("2022-03-25"),
+                            dateString: '02:52 pm',
+                            status: 'read',
+                            avatar: '/gt@2x.png'
+                        },
+                        {
+                            position: 'left',
+                            type: 'text',
+                            titleColor: 'blue',
+                            className: '',
+                            title: 'Dr. Dandamudi',
+                            text: 'Hello Doctor!',
+                            date: new Date(),
+                            avatar: '/gt@2x.png'
+                        },
+                        {
+                            position: 'left',
+                            type: 'text',
+                            titleColor: 'blue',
+                            className: '',
+                            title: 'Dr. Dandamudi',
+                            text: 'Hello Doctor!',
+                            date: new Date(),
+                            avatar: '/gt@2x.png'
+                        },
+                        {
+                            position: 'left',
+                            type: 'text',
+                            titleColor: 'blue',
+                            className: '',
+                            title: 'Dr. Dandamudi',
+                            text: 'Hello Doctor!',
+                            date: new Date(),
+                            avatar: '/gt@2x.png'
+                        },
+                    ]} />
             </div>
             <br />
             <br />
