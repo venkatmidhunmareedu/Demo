@@ -9,10 +9,10 @@ const inputReferance = React.createRef()
 
 const ChatWindow = () => {
     return (
-        <div className='scale-90 text-sm font-sm rounded-xl bg-whitesmoke-100 box-border max-w-screen-md h-full border-[1px] border-solid border-gainsboro-200 font-poppins'>
+        <div className='scale-100 mt-3 text-sm font-sm rounded-xl bg-whitesmoke-100 box-border max-w-screen-md h-fit border-[1px] border-solid border-gainsboro-200 font-poppins'>
             { /* chat window header */}
-            <div className="rounded-t-xl rounded-b-none bg-whitesmoke-200 box-border w-full h-fit border-[1px] border-solid border-gainsboro-200" >
-                <div className='flex items-center justify-start space-x-4 px-4 pt-1'>
+            <div className=" rounded-t-xl rounded-b-none bg-whitesmoke-200 box-border w-full h-fit border-[1px] border-solid border-gainsboro-200" >
+                <div className='scale-90 flex items-center justify-start space-x-4 px-4 pt-1'>
                     <img
                         className=" top-[227px] left-[1371px] rounded-[50%] w-11 h-11 object-cover"
                         alt=""
@@ -60,7 +60,7 @@ const ChatWindow = () => {
                 </div>
             </div> */}
             <br />
-            <div className='md:mx-4 h-[45vh] overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'> 
+            <div className=' md:mx-4 h-[50vh] mb-4 overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'> 
                 <div className="flex justify-center text-center text-lg font-medium text-darkgray my-3">
                     December 21, 2023
                 </div>
@@ -114,9 +114,6 @@ const ChatWindow = () => {
                         },
                     ]} />
             </div>
-            <br />
-            <br />
-            <br />
             { /* chat window status */}
 
             <div className='flex flex-row mx-4 justify-between items-center'>
