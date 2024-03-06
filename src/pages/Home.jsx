@@ -10,7 +10,7 @@ function Home() {
     <div className="grid grid-rows-2 w-[100vw] h-[100vh]">
       <div className="row-span-10 flex justify-start space-x-0">
         <SideBar />
-        <div className="w-fit flex justify-between">
+        <div className="w-fit flex justify-between space-x-2">
           <MessageCard />
           <ChatWindow />
           <PatientSection />
