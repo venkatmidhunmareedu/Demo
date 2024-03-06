@@ -60,7 +60,7 @@ const ChatWindow = () => {
                 </div>
             </div> */}
             <br />
-            <div className=' md:mx-4 h-[50vh] mb-4 overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'> 
+            <div className=' md:mx-4 h-[55vh] mb-4 overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'> 
                 <div className="flex justify-center text-center text-lg font-medium text-darkgray my-3">
                     December 21, 2023
                 </div>
