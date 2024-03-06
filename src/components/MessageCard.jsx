@@ -4,7 +4,7 @@ import ProfileCard from "./ProfileCard";
 
 function MessageCard() {
   return (
-    <div className="flex flex-col mx-2">
+    <div className="scale-95 flex flex-col mx-1">
       <ProfileCard />
       <ContactCard />
     </div>

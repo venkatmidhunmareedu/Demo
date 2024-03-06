@@ -6,7 +6,7 @@ const PatientInfo = () => {
     // use tailwind css
 
     return (
-        <div className='text-xs flex flex-col font-poppins bg-lavender rounded-sm p-3 mt-2'>
+        <div className='text-xs flex flex-col font-poppins bg-lavender rounded-sm mt-2 py-2'>
             <div className='flex space-x-3 items-center'>
                 <div className="rounded-mini " />
                 <img
@@ -18,9 +18,9 @@ const PatientInfo = () => {
                     Franky Schmidt
                 </div>
             </div>
-            <div className='flex justify-center space-x-4 '>
+            <div className='flex justify-center gap-2'>
                 <div className=" leading-[40px]">
-                    <p className="m-0">Sex : </p>
+                    <p className="m-0">Sex</p>
                     <p className="m-0">DOB</p>
                     <p className="m-0">Language</p>
                     <p className="m-0">Preferred Contact</p>

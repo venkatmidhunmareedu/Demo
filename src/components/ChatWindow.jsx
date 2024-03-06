@@ -9,10 +9,10 @@ const inputReferance = React.createRef()
 
 const ChatWindow = () => {
     return (
-        <div className='text-sm font-sm rounded-xl mt-2 bg-whitesmoke-100 box-border max-w-screen-md h-full border-[1px] border-solid border-gainsboro-200 font-poppins'>
+        <div className='scale-90 text-sm font-sm rounded-xl bg-whitesmoke-100 box-border max-w-screen-md h-full border-[1px] border-solid border-gainsboro-200 font-poppins'>
             { /* chat window header */}
-            <div className="rounded-t-xl rounded-b-none bg-whitesmoke-200 box-border w-full h-[82px] border-[1px] border-solid border-gainsboro-200" >
-                <div className='flex items-center justify-start space-x-4 px-4 pt-2'>
+            <div className="rounded-t-xl rounded-b-none bg-whitesmoke-200 box-border w-full h-fit border-[1px] border-solid border-gainsboro-200" >
+                <div className='flex items-center justify-start space-x-4 px-4 pt-1'>
                     <img
                         className=" top-[227px] left-[1371px] rounded-[50%] w-11 h-11 object-cover"
                         alt=""
@@ -114,6 +114,7 @@ const ChatWindow = () => {
                         },
                     ]} />
             </div>
+            <br />
             <br />
             <br />
             { /* chat window status */}

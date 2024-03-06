@@ -8,11 +8,13 @@ import PatientSection from "../components/PatientSection";
 function Home() {
   return (
     <div className="grid grid-rows-2">
-      <div className="row-span-10 flex justify-start space-x-5">
+      <div className="row-span-10 flex justify-start space-x-2">
         <SideBar />
-        <MessageCard />
-        <ChatWindow />
-        <PatientSection />
+        <div className="w-fit flex justify-between">
+          <MessageCard />
+          <ChatWindow />
+          <PatientSection />
+        </div>
       </div>
       <div className="row-span-3">
         <Footer />
