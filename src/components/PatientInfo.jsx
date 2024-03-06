@@ -6,7 +6,7 @@ const PatientInfo = () => {
     // use tailwind css
 
     return (
-        <div className='text-xs flex flex-col font-poppins mt-3 bg-lavender rounded-sm px-3 pt-2 max-w-full w-64'>
+        <div className='text-xs flex flex-col font-poppins bg-lavender rounded-sm p-3 mt-2'>
             <div className='flex space-x-3 items-center'>
                 <div className="rounded-mini " />
                 <img
