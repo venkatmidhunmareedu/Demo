@@ -4,9 +4,9 @@ import Activity from "./Activity";
 
 function PatientSection() {
   return (
-    <div className="flex flex-col pt-3 w-[250px]">
+    <div className="flex flex-col p-3 mt-3 w-[300px] bg-aliceblue bg-opacity-[0.47] rounded-md">
       <div className="mb-3">
-        <div className="text-3xl pl-3 font-medium text-darkslateblue-200">
+        <div className="text-3xl pl-1 font-medium text-darkslateblue-200">
           Patient Info
         </div>
         <PatientInfo />
