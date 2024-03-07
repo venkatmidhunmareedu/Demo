@@ -1,6 +1,8 @@
 const express = require('express');
 const { MessagingResponse } = require('twilio').twiml;
 const smsutils = require('./utils/smsutils');
+const bodyParser = require('body-parser');
+var cors = require('cors');
 
 require('dotenv').config();
 
@@ -9,6 +11,8 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 
 app.post('/sms', (req, res) => {
     const twiml = new MessagingResponse();
@@ -35,8 +39,8 @@ app.post('/whatsapp/send', (req, res) => {
     // const twiml = new MessagingResponse();
     // twiml.message('This is whatsapp testing');
     // res.type('text/xml').send(twiml.toString());
-    console.log(req.query);
-    const message = req.query.message;
+    console.log(req.body);
+    const {message} = req.body;
     try {
         smsutils.send_message(message);
         res.json({ 

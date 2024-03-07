@@ -88,11 +88,8 @@ const ChatWindow = () => {
 
     const sendDataToBackend = async (message) => {
         try {
-          const response = await axios.post('https://localhost:1337/whatsapp/send', {
-            params: {
-                message
-            }
-          });
+            console.log(message)
+          const response = await axios.post('http://localhost:1337/whatsapp/send', {message});
           console.log(response.data); // Handle the response data as needed
         } catch (error) {
           console.error('Error sending data:', error);
