@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaRegSmile } from "react-icons/fa";
 import { MessageList } from 'react-chat-elements'
 import { SideBar } from 'react-chat-elements'
@@ -7,8 +7,124 @@ import { Input, Button } from 'react-chat-elements'
 const inputReferance = React.createRef()
 import { AiOutlineSend } from "react-icons/ai";
 
+import axios from 'axios';
+
 
 const ChatWindow = () => {
+    const [inputText, setInputText] = useState("");
+  const [data, setData] = useState([]);
+    // let data = [{
+    //     position: 'right',
+    //     type: 'text',
+    //     titleColor: 'green',
+    //     className: '',
+    //     title: 'Franky Schmidt',
+    //     text: 'Hello Doctor!',
+    //     date: new Date("2022-03-25"),
+    //     dateString: '02:52 pm',
+    //     status: 'read',
+    //     avatar: '/gt@2x.png'
+    // },
+    // {
+    //     position: 'left',
+    //     type: 'text',
+    //     titleColor: 'blue',
+    //     className: '',
+    //     title: 'Dr. Dandamudi',
+    //     text: 'Hello Doctor!',
+    //     date: new Date(),
+    //     avatar: '/gt@2x.png'
+    // },
+    // {
+    //     position: 'left',
+    //     type: 'text',
+    //     titleColor: 'blue',
+    //     className: '',
+    //     title: 'Dr. Dandamudi',
+    //     text: 'Hello Doctor!',
+    //     date: new Date(),
+    //     avatar: '/gt@2x.png'
+    // },
+    // {
+    //     position: 'left',
+    //     type: 'text',
+    //     titleColor: 'blue',
+    //     className: '',
+    //     title: 'Dr. Dandamudi',
+    //     text: 'Hello Doctor!',
+    //     date: new Date(),
+    //     avatar: '/gt@2x.png'
+    // },
+    // {
+    //     position: 'left',
+    //     type: 'text',
+    //     titleColor: 'blue',
+    //     className: '',
+    //     title: 'Dr. Dandamudi',
+    //     text: 'Hello Doctor!',
+    //     date: new Date(),
+    //     avatar: '/gt@2x.png'
+    // },
+    // {
+    //     position: 'right',
+    //     type: 'text',
+    //     titleColor: 'green',
+    //     className: '',
+    //     title: 'Dr. Dandamudi',
+    //     text: 'Hello Doctor!',
+    //     date: new Date(),
+    //     avatar: '/gt@2x.png'
+    // },
+    // {
+    //     position: 'right',
+    //     type: 'text',
+    //     titleColor: 'blue',
+    //     className: '',
+    //     title: 'Dr. Dandamudi',
+    //     text: 'Hello Doctor!',
+    //     date: new Date(),
+    //     avatar: '/gt@2x.png'
+    // },]
+
+    const sendDataToBackend = async (message) => {
+        try {
+          const response = await axios.post('https://localhost:1337/whatsapp/send', {
+            params: {
+                message
+            }
+          });
+          console.log(response.data); // Handle the response data as needed
+        } catch (error) {
+          console.error('Error sending data:', error);
+          // Handle the error
+        }
+      };
+
+    const handleInputChange = (e) => {
+        setInputText(e.target.value);
+      };
+    
+      const handleSendClick = () => {
+        const newMessage = {
+            position: 'right', // Assuming it's the user's message
+            type: 'text',
+            titleColor: 'green', // Update with the appropriate color
+            className: '',
+            title: 'Franky Schmidt', // Update with the user's name
+            text: inputText, // Use the input text
+            date: new Date(),
+            status: 'sent', // Update with the appropriate status
+            avatar: '/gt@2x.png' // Update with the user's avatar
+          };
+
+        const newData = [...data, newMessage];
+        setData(newData);
+        sendDataToBackend(inputText)
+        setInputText("");
+      };
+
+      console.log(data)
+
     return (
         <div className='scale-100 mt-3 text-sm font-sm rounded-xl bg-whitesmoke-100 box-border max-w-screen-md h-fit border-[1px] border-solid border-gainsboro-200 font-poppins'>
             { /* chat window header */}
@@ -70,80 +186,7 @@ const ChatWindow = () => {
                     className='message-list'
                     lockable={true}
                     toBottomHeight={'100%'}
-                    dataSource={[
-                        {
-                            position: 'right',
-                            type: 'text',
-                            titleColor: 'green',
-                            className: '',
-                            title: 'Franky Schmidt',
-                            text: 'Hello Doctor!',
-                            date: new Date("2022-03-25"),
-                            dateString: '02:52 pm',
-                            status: 'read',
-                            avatar: '/gt@2x.png'
-                        },
-                        {
-                            position: 'left',
-                            type: 'text',
-                            titleColor: 'blue',
-                            className: '',
-                            title: 'Dr. Dandamudi',
-                            text: 'Hello Doctor!',
-                            date: new Date(),
-                            avatar: '/gt@2x.png'
-                        },
-                        {
-                            position: 'left',
-                            type: 'text',
-                            titleColor: 'blue',
-                            className: '',
-                            title: 'Dr. Dandamudi',
-                            text: 'Hello Doctor!',
-                            date: new Date(),
-                            avatar: '/gt@2x.png'
-                        },
-                        {
-                            position: 'left',
-                            type: 'text',
-                            titleColor: 'blue',
-                            className: '',
-                            title: 'Dr. Dandamudi',
-                            text: 'Hello Doctor!',
-                            date: new Date(),
-                            avatar: '/gt@2x.png'
-                        },
-                        {
-                            position: 'left',
-                            type: 'text',
-                            titleColor: 'blue',
-                            className: '',
-                            title: 'Dr. Dandamudi',
-                            text: 'Hello Doctor!',
-                            date: new Date(),
-                            avatar: '/gt@2x.png'
-                        },
-                        {
-                            position: 'right',
-                            type: 'text',
-                            titleColor: 'green',
-                            className: '',
-                            title: 'Dr. Dandamudi',
-                            text: 'Hello Doctor!',
-                            date: new Date(),
-                            avatar: '/gt@2x.png'
-                        },
-                        {
-                            position: 'right',
-                            type: 'text',
-                            titleColor: 'blue',
-                            className: '',
-                            title: 'Dr. Dandamudi',
-                            text: 'Hello Doctor!',
-                            date: new Date(),
-                            avatar: '/gt@2x.png'
-                        },
-                    ]} />
+                    dataSource={data} />
             </div>
             { /* chat window status */}
 
@@ -194,6 +237,8 @@ const ChatWindow = () => {
                         className="px-3 font-medium font-poppins rounded-[30px] bg-white box-border w-[853px] h-[45px] border-[1px] border-solid border-e-0 border-t-0 border-b-0 border-gainsboro-200 outline-none"
                         type="text"
                         placeholder="Enter your message here"
+                        value={inputText}
+            onChange={handleInputChange}
                     />
                     <div className='flex justify-center items-center space-x-3 px-3'>
                         <FaRegSmile className='w-[15px] h-[15px] text-darkgray cursor-pointer' />
@@ -208,7 +253,8 @@ const ChatWindow = () => {
                                 alt=""
                                 src="/path-76.svg"
                             /> */}
-                            <AiOutlineSend className='text-white font-bold' />
+
+                            <AiOutlineSend className='text-white font-bold'  onClick={handleSendClick}/>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,9 @@ app.post('/sms', (req, res) => {
     res.type('text/xml').send(twiml.toString());
 });
 
-
+app.get('/',(req,res)=>{
+    res.send('hiii');
+})
 const list_messages = () => {
     client.messages.list({ limit: 2 })
         .then(messages => messages.forEach(m => console.log(m.body)));
