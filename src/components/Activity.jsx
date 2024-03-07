@@ -47,7 +47,8 @@ const Appointments = () => {
         </div>
       </div>
     
-        <div>
+        <div className="h-[30vh] overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-300 ">
+            <Events />
             <Events />
             <Events />
         </div>

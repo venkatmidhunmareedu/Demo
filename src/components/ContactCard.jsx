@@ -22,7 +22,7 @@ const ContactCard = () => {
       </div>
       <div className="flex flex-col gap-2">
         <SearchBar />
-        <div className="h-[65vh] overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slategray">
+        <div className="h-[65vh] overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slategray px-2 py-2">
           <ChatList
             className='chat-list'
             dataSource={[

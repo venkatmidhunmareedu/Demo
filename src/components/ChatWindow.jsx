@@ -5,6 +5,7 @@ import { SideBar } from 'react-chat-elements'
 const messageListReferance = React.createRef();
 import { Input, Button } from 'react-chat-elements'
 const inputReferance = React.createRef()
+import { AiOutlineSend } from "react-icons/ai";
 
 
 const ChatWindow = () => {
@@ -60,7 +61,7 @@ const ChatWindow = () => {
                 </div>
             </div> */}
             <br />
-            <div className=' md:mx-4 h-[55vh] mb-4 overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'> 
+            <div className=' md:mx-4 h-[55vh] mb-4 overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thumb-rounded'>
                 <div className="flex justify-center text-center text-lg font-medium text-darkgray my-3">
                     December 21, 2023
                 </div>
@@ -104,6 +105,36 @@ const ChatWindow = () => {
                         },
                         {
                             position: 'left',
+                            type: 'text',
+                            titleColor: 'blue',
+                            className: '',
+                            title: 'Dr. Dandamudi',
+                            text: 'Hello Doctor!',
+                            date: new Date(),
+                            avatar: '/gt@2x.png'
+                        },
+                        {
+                            position: 'left',
+                            type: 'text',
+                            titleColor: 'blue',
+                            className: '',
+                            title: 'Dr. Dandamudi',
+                            text: 'Hello Doctor!',
+                            date: new Date(),
+                            avatar: '/gt@2x.png'
+                        },
+                        {
+                            position: 'right',
+                            type: 'text',
+                            titleColor: 'green',
+                            className: '',
+                            title: 'Dr. Dandamudi',
+                            text: 'Hello Doctor!',
+                            date: new Date(),
+                            avatar: '/gt@2x.png'
+                        },
+                        {
+                            position: 'right',
                             type: 'text',
                             titleColor: 'blue',
                             className: '',
@@ -158,25 +189,26 @@ const ChatWindow = () => {
 
             { /* chat window message input */}
             <div className='mx-4 my-4'>
-                <div className="flex items-center justify-between space-x-1 rounded-[30px] bg-white box-border max-w-fit h-fit border-[1px] border-solid border-gainsboro-200" >
+                <div className="flex items-center justify-between space-x-1 rounded-[30px] bg-white box-border max-w-fit h- border-[1px] border-solid border-gainsboro-200" >
                     <input
-                        className="px-3 font-medium font-poppins rounded-[30px] bg-white box-border w-[853px] h-[60px] border-[1px] border-solid border-e-0 border-t-0 border-b-0 border-gainsboro-200 outline-none"
+                        className="px-3 font-medium font-poppins rounded-[30px] bg-white box-border w-[853px] h-[45px] border-[1px] border-solid border-e-0 border-t-0 border-b-0 border-gainsboro-200 outline-none"
                         type="text"
                         placeholder="Enter your message here"
                     />
                     <div className='flex justify-center items-center space-x-3 px-3'>
-                        <FaRegSmile className='w-[22.41px] h-[22px] text-darkgray cursor-pointer' />
+                        <FaRegSmile className='w-[15px] h-[15px] text-darkgray cursor-pointer' />
                         <img
-                            className="w-[22.41px] h-[22px] cursor-pointer"
+                            className="w-[15px] h-[15px] cursor-pointer"
                             alt=""
                             src="/paperclip.svg"
                         />
-                        <div className="rounded-full bg-yellowgreen w-[46px] h-[46px] flex justify-center items-center text-center cursor-pointer">
-                            <img
+                        <div className="rounded-full bg-yellowgreen w-[30px] h-[30px] flex justify-center items-center text-center cursor-pointer">
+                            {/* <img
                                 className="h-[59.95%] w-[59.95%]"
                                 alt=""
                                 src="/path-76.svg"
-                            />
+                            /> */}
+                            <AiOutlineSend className='text-white font-bold' />
                         </div>
                     </div>
                 </div>
